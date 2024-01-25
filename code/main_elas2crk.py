@@ -12,7 +12,7 @@ import numpy as np
 import imgaug.augmenters as iaa
 
 
-inference = False
+inference = True
 
 
 # ===============
@@ -75,7 +75,7 @@ dataset = elas2crkDataset(dir_mesh, lst_dir0, LOADprefix='Load0.0', transform=tr
 numDAT = len(dataset)
 
 
-idx = 2
+idx = 1
 mesh, energy, load, field = dataset[idx]
 fig,ax = plt.subplots(1,3);
 ax[0].imshow(mesh[0]); ax[0].axis('off'); ax[0].set_title('RVE geometry')
@@ -173,6 +173,3 @@ ax1 = plt.subplot(gs1[1]); im=ax1.imshow(energy[0,0].cpu().T, vmax=0.5, cmap='je
 ax1 = plt.subplot(gs1[2]); im=ax1.imshow(field[0,0].cpu().T, vmin=0, vmax=1, cmap='rainbow'); plt.axis('off'); ax1.set_title('Damage')
 ax1 = plt.subplot(gs1[3]); im=ax1.imshow(pred[0,0].cpu().T, vmin=0, vmax=1, cmap='rainbow'); plt.axis('off'); ax1.set_title('Damage (CNN)')
 plt.show()
-
-
-
