@@ -74,7 +74,7 @@ transform = iaa.Sequential(
 dataset = stepDataset(dir_mesh, lst_dir0, LOADprefix='Load0.0', transform=transform, outputFields='stress', varLOAD=False, step=10)
 numDAT = len(dataset)
 
-idx = 2
+idx = 1
 mesh, load, field = dataset[idx]
 fig,ax = plt.subplots(1,2)
 ax[0].imshow(mesh[0]); ax[0].axis('off'); ax[0].set_title('RVE geometry')
@@ -151,7 +151,7 @@ from utils.inference import *
 import time
 import matplotlib.gridspec as gridspec
 
-isample = 2
+isample = 1
 
 t0 = time.time()
 #isample = 123
